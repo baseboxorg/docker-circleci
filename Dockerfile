@@ -1,6 +1,6 @@
-FROM docker/compose:1.17.1
+FROM docker/compose:1.20.1
 
-MAINTAINER John Allen <john.allen@technekes.com>
+MAINTAINER BaseBoxOrg <baseboxorg@outlook.com>
 
 RUN \
   apk --no-cache add --virtual .rundeps \
@@ -13,5 +13,7 @@ RUN \
     parallel \
     ruby \
     ruby-bundler \
-    ruby-json && \
+    ruby-json \
+    tar \
+    gzip && \
   gem install danger --no-document
